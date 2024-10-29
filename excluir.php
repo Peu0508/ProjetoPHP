@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Criar conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -21,7 +21,7 @@ if (isset($_GET['id'])) {
     // Verifica se o ID é um número
     if (is_numeric($id)) {
         // Preparar a consulta
-        $sql = "DELETE FROM Produtos WHERE id = ?";
+        $sql = "DELETE FROM clientes WHERE id = ?";
 
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("i", $id); // "i" significa que o parâmetro é um inteiro

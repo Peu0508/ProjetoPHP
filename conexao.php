@@ -1,8 +1,9 @@
+<?php require 'home.php' ?>
 <?php
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -16,7 +17,7 @@ $telefone = $_POST["telefone"];
 $endereco = $_POST["endereco"];
 $sexo = $_POST["sexo"];
 
-$sql = "INSERT INTO produtos (nome, telefone, endereco,sexo)
+$sql = "INSERT INTO clientes (nome, telefone, endereco,sexo)
 VALUES ('$nome', '$telefone', '$endereco ','$sexo')";
 
 if ($conn->query($sql) === TRUE) {

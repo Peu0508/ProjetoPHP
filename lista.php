@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta para selecionar todos os clientes
-$sql = "SELECT * FROM produtos";
+$sql = "SELECT * FROM clientes";
 $result = $conn->query($sql);
 ?>
 <!doctype html>

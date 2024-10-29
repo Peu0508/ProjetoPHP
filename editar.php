@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
 
     // Prepara a consulta para obter os dados do cliente
-    $sql = "SELECT * FROM cliente WHERE id = ?";
+    $sql = "SELECT * FROM clientes WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();

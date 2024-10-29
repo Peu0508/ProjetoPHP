@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Cria a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sexo = $conn->real_escape_string($_POST["sexo"]);
 
     // Atualiza o cliente no banco de dados
-    $sql = "UPDATE Produtos SET nome='$nome', telefone='$telefone', endereco='$endereco', sexo='$sexo' WHERE id=$id";
+    $sql = "UPDATE clientes SET nome='$nome', telefone='$telefone', endereco='$endereco', sexo='$sexo' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         echo "Cliente atualizado com sucesso!";
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 // Busca os dados do cliente atual para exibir no formulário
-$sql = "SELECT * FROM Produtos WHERE id = $id";
+$sql = "SELECT * FROM clientes WHERE id = $id";
 $result = $conn->query($sql);
 
 // Verifica se o cliente foi encontrado

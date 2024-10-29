@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Produtos";
+$dbname = "produtos";
 
 // Cria a conexão
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
 // Consulta para selecionar o cliente pelo ID
-$sql = "SELECT * FROM Produtos WHERE id = $id";
+$sql = "SELECT * FROM clientes WHERE id = $id";
 $result = $conn->query($sql);
 
 // Verifica se o cliente foi encontrado
