@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 }
 
 // Consulta para selecionar todos os clientes
-$sql = "SELECT * FROM clientes";
+$sql = "SELECT * FROM produtos";
 $result = $conn->query($sql);
 ?>
 <!doctype html>
@@ -22,21 +22,20 @@ $result = $conn->query($sql);
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Lista de Clientes</title>
+    <title>Lista de Produtos</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   </head>
   <body>
     <div class="container mt-4">
-      <h1>Lista de Clientes</h1>       
+      <h1>Lista de Produtos</h1>       
       <table class="table table-bordered">
         <thead>
           <tr>
             <th scope="col">Id</th>
             <th scope="col">Nome</th>
-            <th scope="col">Telefone</th>
-            <th scope="col">Endereço</th>
-            <th scope="col">Sexo</th>
-            <th scope="col">Opções</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Preço</th>
+            <th scope="col">Descrição</th>
           </tr>
         </thead>
         <tbody>
@@ -55,7 +54,7 @@ $result = $conn->query($sql);
               <a class="btn btn-success btn-sm" href="atualizar.php?id=<?php echo $row['id'] ?>" role="button">Atualizar</a>    
               <a class="btn btn-danger btn-sm" href="excluir.php?id=<?php echo $row['id'] ?>" role="button" onclick="return confirm('Tem certeza que deseja excluir?');">Excluir</a>
               <a class="btn btn-primary btn-sm" href="cadastrarProduto.php?id=<?php echo $row['id'] ?>" role="button">Cadastrar Produtos</a>
-              <a class="btn btn-primary btn-sm" href="listaProdutos.php?id=<?php echo $row['id'] ?>" role="button">Listar Produtos</a>    
+              <a class="btn btn-primary btn-sm" href="detalhar.php?id=<?php echo $row['id'] ?>" role="button">Listar Produtos</a>    
             </td>
           </tr>
           <?php    
